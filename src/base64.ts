@@ -75,8 +75,10 @@ function toArrayBuffer(data: string, urlMode?: boolean): ArrayBuffer {
  * @param {boolean} [urlMode] - If set to true, URL mode string will be returned
  * @returns {string} - Base64 representation of data
  */
-function fromArrayBuffer(arrBuf: ArrayBuffer, urlMode?: boolean): string {
-  const bytes = new Uint8Array(arrBuf);
+function fromArrayBuffer(arrBuf: ArrayBuffer | SharedArrayBuffer | Uint8Array, urlMode?: boolean): string {
+  const bytes = "buffer" in arrBuf
+    ? arrBuf
+    : new Uint8Array(arrBuf);
   let i,
     result = "";
 
