@@ -71,7 +71,7 @@ function toArrayBuffer(data: string, urlMode?: boolean): ArrayBuffer {
  * Convenience function for creating a base64 encoded string from an ArrayBuffer instance
  * @public
  *
- * @param {ArrayBuffer | SharedArrayBuffer | Uint8Array} arrBuf - ArrayBuffer to be encoded
+ * @param {ArrayBuffer | SharedArrayBuffer | Uint8Array} arrBuf - ArrayBuffer, SharedArrayBuffer, or Uint8Array to be encoded
  * @param {boolean} [urlMode] - If set to true, URL mode string will be returned
  * @returns {string} - Base64 representation of data
  */
